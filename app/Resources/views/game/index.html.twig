@@ -20,8 +20,18 @@
     {% endif %}
 </div>
 
-<h2>
-    how many times the player has won
-    how many times the computer has won
-    how many times each has chosen which option (rock, paper, etc...).</h2>
+<h2>Wins</h2>
+    Player: {{ wins }}<br>
+    Computer {{ losses }}<br>
+</h2>
+
+<h3>Player Choices</h3>
+    {% for action in actions %}
+        {{ action.name }}: {{ action.player_play_count }} <br>
+    {% endfor %}
+<h3>Computer Choices</h3>
+    {% for action in actions %}
+        {{ action.name }}: {{ action.computer_play_count }} <br>
+    {% endfor %}
+
 
