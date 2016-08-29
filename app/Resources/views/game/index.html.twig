@@ -1,0 +1,27 @@
+<h1>Perform action</h1>
+<div>
+    <form method="post">
+        {% for action in actions %}
+            <button type="submit" name="action" value="{{ action.key }}">{{ action.name }}</button>
+        {% endfor %}
+    </form>
+    {% if action %}
+        <div>
+            You played: {{ action.name }}<br>
+            Computer played: {{ counter.name }}<br>
+            {% if winner %}
+                You win
+            {% elseif loser %}
+                You lose
+            {% else %}
+                Tie
+            {% endif %}
+        </div>
+    {% endif %}
+</div>
+
+<h2>
+    how many times the player has won
+    how many times the computer has won
+    how many times each has chosen which option (rock, paper, etc...).</h2>
+
